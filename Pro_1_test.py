@@ -44,7 +44,8 @@ def trans_ans(recg,micro):
     except sr.RequestError:
         return 'Unreachable'
     except sr.UnknownValueError:
-        return 'unable to listen...!'
+         print('unable to listen')
+         exit()
     except:
         return 'Some other error...!'
     pass
@@ -55,10 +56,6 @@ if __name__=='__main__':
 
         ask_buy('Hello i am hp what do u want to buy today?')
         txt = trans_ans(hp,micro)
-        if txt=='unable to listen':
-            print('unable to listen')
-            exit()
-        else:
-            webbrowser.open('https://www.flipkart.com/search?q='+txt)
+        webbrowser.open('https://www.flipkart.com/search?q='+txt)
 
 
